@@ -39,8 +39,6 @@ dependencies:
   mvc_pattern: ^8.12.0
   flutter_localizations:
     sdk: flutter
-  cached_network_image: ^3.3.0
-  flutter_svg: ^2.0.7
   intl: ^0.18.0
   provider: ^6.0.5
 
@@ -66,26 +64,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/
-    - assets/images/
-  fonts:
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/MontserratRomanMedium.ttf
-          weight: 500
-    - family: Open Sans
-      fonts:
-        - asset: assets/fonts/OpenSansItalicRegular.ttf
-          weight: 400
-    - family: Montaga
-      fonts:
-        - asset: assets/fonts/MontagaRegular.ttf
-          weight: 400
-    - family: Numans
-      fonts:
-        - asset: assets/fonts/NumansRegular.ttf
-          weight: 400
+  # assets:
+  #   - assets/
+  #   - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
