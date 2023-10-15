@@ -1,10 +1,11 @@
-import 'package:constro/views/home_view.dart';
 import 'package:flutter/material.dart';
 
+import '../views/auth_page.dart';
+
 class AppRoutes {
-  static const String homePageScreen = '/';
+  static const String authPage = '/';
 
   static Map<String, WidgetBuilder> routes = {
-    homePageScreen: (context) => HomeView(),
+    authPage: (context) => AuthPage(),
   };
 }
