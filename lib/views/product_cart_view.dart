@@ -17,9 +17,9 @@ class ProductCartView extends StatelessWidget {
               itemCount: cart.products.length,
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
-                  leading: Image.network(cart.products[index]['image']),
-                  title: Text(cart.products[index]['name']),
-                  subtitle: Text('\$${cart.products[index]['price']}'),
+                  leading: Image.network(cart.products[index]['imageUrl'] ?? ''),
+                  title: Text(cart.products[index]['name'] ?? ''),
+                  subtitle: Text('\$${cart.products[index]['price'] ?? ''}'),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [

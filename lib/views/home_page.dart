@@ -1,4 +1,5 @@
 import 'package:constro/views/product_cart_view.dart';
+import 'package:constro/views/products_view.dart'; // import the ProductsView
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Center(child: Text("Logged In as " + user.email!)),
+      body: ProductsView(), // call the ProductsView here
     );
   }
 }

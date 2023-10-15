@@ -1,27 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 class CartModel extends ChangeNotifier {
-  final List<Map<String, dynamic>> _products = [
-    {
-      'name': 'Product 1',
-      'price': 10.0,
-      'quantity': 2,
-      'image': 'https://via.placeholder.com/150',
-    },
-    
-    {
-      'name': 'Product 2',
-      'price': 20.0,
-      'quantity': 1,
-      'image': 'https://via.placeholder.com/150',
-    },
-    {
-      'name': 'Product 3',
-      'price': 30.0,
-      'quantity': 3,
-      'image': 'https://via.placeholder.com/150',
-    },
-  ];
+  final List<Map<String, dynamic>> _products = [];
 
   double _subtotal = 0.0;
   double _tax = 0.0;
@@ -65,6 +45,13 @@ class CartModel extends ChangeNotifier {
 
   void removeProduct(int index) {
     _products.removeAt(index);
+    _calculateTotal();
+  }
+
+  void addProduct(Map<String, dynamic> product) {
+    // new method to add a product
+    product['quantity'] = 1; // set the initial quantity
+    _products.add(product);
     _calculateTotal();
   }
 }
