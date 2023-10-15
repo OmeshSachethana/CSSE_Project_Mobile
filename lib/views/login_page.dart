@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 //app name
                 const Text(
-                  'SustainSwap',
+                  'C O N S T R O',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 25,
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                 const Icon(
                   Icons.lock,
                   size: 100,
-                  color: Color.fromARGB(255, 97, 73, 139),
+                  color: Color.fromARGB(255, 48, 48, 132),
                 ),
 
                 const SizedBox(height: 20),
