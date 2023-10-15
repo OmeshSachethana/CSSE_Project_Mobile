@@ -1,3 +1,4 @@
+import 'package:constro/views/shopping_cart_view/shopping_cart_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,11 @@ class HomePage extends StatelessWidget {
     FirebaseAuth.instance.signOut();
   }
 
+  void navigateToCartPage(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ShoppingCartScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +25,12 @@ class HomePage extends StatelessWidget {
         title: const Text("Home Page"),
         actions: [
           IconButton(
+            onPressed: () => navigateToCartPage(context),
+            icon: const Icon(Icons.shopping_cart),
+          ),
+          IconButton(
             onPressed: signUserOut,
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           )
         ],
       ),
