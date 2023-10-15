@@ -54,4 +54,9 @@ class CartModel extends ChangeNotifier {
     _products.add(product);
     _calculateTotal();
   }
+
+  void clearCart() {
+    _products.clear();
+    _calculateTotal();
+  }
 }
