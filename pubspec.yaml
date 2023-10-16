@@ -41,6 +41,7 @@ dependencies:
   firebase_storage: ^11.2.6
   image_picker: ^1.0.4
   quickalert: ^1.0.2
+  provider: ^6.0.5
 
 
 dev_dependencies:
