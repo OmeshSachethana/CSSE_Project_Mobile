@@ -53,18 +53,22 @@ class _ProductsViewState extends State<ProductsView> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, // You can change this value as needed
-                  childAspectRatio: 0.7, // Adjust this for the desired aspect ratio
+                  childAspectRatio:
+                      0.7, // Adjust this for the desired aspect ratio
                 ),
                 itemCount: filteredProducts.length,
                 itemBuilder: (context, index) {
-                  Map<String, dynamic> data = filteredProducts[index].data() as Map<String, dynamic>;
+                  Map<String, dynamic> data =
+                      filteredProducts[index].data() as Map<String, dynamic>;
                   return Card(
                     elevation: 4, // Add a drop shadow
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0), // Add rounded corners
+                      borderRadius:
+                          BorderRadius.circular(12.0), // Add rounded corners
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0), // Add padding to the card
+                      padding:
+                          const EdgeInsets.all(8.0), // Add padding to the card
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -75,7 +79,8 @@ class _ProductsViewState extends State<ProductsView> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(data['name'], style: TextStyle(fontWeight: FontWeight.bold)),
+                            child: Text(data['name'],
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -86,21 +91,26 @@ class _ProductsViewState extends State<ProductsView> {
                             child: Text("\$${data['price'].toString()}"),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 8.0, right: 8.0), // Add top and right padding
+                            padding: const EdgeInsets.only(
+                                top: 0.0,
+                                right: 8.0), // Add top and right padding
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end, // Align the button to the right
+                              mainAxisAlignment: MainAxisAlignment
+                                  .end, // Align the button to the right
                               children: <Widget>[
                                 // Add circular "Add to Cart" button with cart icon
                                 InkWell(
                                   onTap: () {
-                                    cart.addProduct(data); // add the product to the cart
+                                    cart.addProduct(
+                                        data); // add the product to the cart
                                   },
                                   child: Container(
                                     width: 40, // Adjust the button size
                                     height: 40,
                                     decoration: BoxDecoration(
                                       color: Colors.blue, // Button color
-                                      shape: BoxShape.circle, // Make it circular
+                                      shape:
+                                          BoxShape.circle, // Make it circular
                                     ),
                                     child: Icon(
                                       Icons.add_shopping_cart,
