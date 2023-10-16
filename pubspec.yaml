@@ -37,11 +37,12 @@ dependencies:
   firebase_core: ^2.15.1
   firebase_auth: ^4.9.0
   mvc_pattern: ^8.12.0
-  flutter_localizations:
-    sdk: flutter
-  intl: ^0.18.0
+  cloud_firestore: ^4.8.4
+  firebase_storage: ^11.2.6
+  image_picker: ^1.0.4
+  quickalert: ^1.0.2
   provider: ^6.0.5
-  cloud_firestore: ^4.9.3
+
 
 dev_dependencies:
   flutter_test:
