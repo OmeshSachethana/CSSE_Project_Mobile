@@ -19,7 +19,7 @@ class CartModel extends ChangeNotifier {
   void _calculateTotal() {
     double subtotal = 0.0;
     for (var product in _products) {
-      subtotal += num.parse(product['price']) * (product['quantity']);
+      subtotal += product['price'] * (product['quantity']);
     }
     double tax = subtotal * 0.1;
     double total = subtotal + tax;
