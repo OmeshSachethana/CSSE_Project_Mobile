@@ -1,3 +1,5 @@
+import 'package:constro/views/product_cart_view.dart';
+import 'package:constro/views/products_view.dart'; // import the ProductsView
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,11 @@ class HomePage extends StatelessWidget {
     FirebaseAuth.instance.signOut();
   }
 
+  void navigateToCartPage(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ProductCartView()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,43 +27,17 @@ class HomePage extends StatelessWidget {
         title: const Text("Home Page"),
         actions: [
           IconButton(
+            onPressed: () => navigateToCartPage(context),
+            icon: const Icon(Icons.shopping_cart),
+          ),
+          IconButton(
             onPressed: signUserOut,
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           )
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Image.asset(
-                'lib/images/logo.png'), // Add your logo image file path here
-            CarouselSlider(
-              options: CarouselOptions(
-                height: 170.0,
-                autoPlay: true,
-              ),
-              items: [
-                'lib/images/image1.jpg',
-                'lib/images/image2.jpeg',
-                'lib/images/image3.jpg'
-              ].map((path) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      decoration: BoxDecoration(color: Colors.amber),
-                      child: Image.asset(
-                          path), // Use the path from the map function
-                    );
-                  },
-                );
-              }).toList(),
-            )
-          ],
-        ),
-      ),
+
+      body: ProductsView(), // call the ProductsView here
     );
   }
 }
