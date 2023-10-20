@@ -1,3 +1,5 @@
+import 'package:constro/views/delivery/drivers.dart';
+import 'package:constro/views/delivery/user.dart';
 import 'package:constro/views/product_cart_view.dart';
 import 'package:constro/views/products_view.dart'; // import the ProductsView
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,6 +37,68 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+
+      //-----------------------------------------------------------------
+      drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 149, 156, 162),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              height: 120, // Adjust the height as needed
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 6, 39, 52),
+              ),
+              child: const Center(
+                child: Text(
+                  'M E N U',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+            ListTile(
+              title: const Text('S U P P L I E R',
+                  style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Drivers(),
+                  ),
+                );
+                // Add your logic for when Item 1 is tapped
+                //goToProfilePage(context);
+              },
+            ),
+            ListTile(
+              title: const Text('S I T E  M A N A G E R',
+                  style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => Users(),
+                    ));
+              },
+            ), // Users()
+
+            const SizedBox(height: 180),
+            ListTile(
+              title: const Text('L O G O U T',
+                  style: TextStyle(color: Colors.white)),
+              onTap: signUserOut,
+            ),
+            // Add more ListTile items as needed
+          ],
+        ),
+      ),
+
+      //-----------------------------------------------------------------
+
       body: ProductsView(), // call the ProductsView here
     );
   }
