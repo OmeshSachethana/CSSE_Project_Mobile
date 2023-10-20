@@ -27,10 +27,10 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text("Logged In as " + user.email!),
-            SizedBox(height: 20), // Add some spacing
+            Image.asset(
+                'lib/images/logo.png'), // Add your logo image file path here
             CarouselSlider(
               options: CarouselOptions(
                 height: 170.0,
