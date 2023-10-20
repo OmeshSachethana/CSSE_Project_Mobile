@@ -3,7 +3,6 @@ import 'package:constro/views/products_view.dart'; // import the ProductsView
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -36,7 +35,6 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-
       body: ProductsView(), // call the ProductsView here
     );
   }
