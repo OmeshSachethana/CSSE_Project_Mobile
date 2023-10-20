@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
             CarouselSlider(
               options: CarouselOptions(
                 height: 170.0,
+                autoPlay: true,
               ),
               items: [
                 'lib/images/image1.jpg',
