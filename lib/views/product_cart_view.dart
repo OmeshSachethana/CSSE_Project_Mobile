@@ -59,28 +59,48 @@ class ProductCartView extends StatelessWidget {
             trailing: Text('\$${cart.total}'),
           ),
           ElevatedButton(
-            onPressed: () {
-              placeOrder(cart);
-              cart.clearCart();
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: const Text('Order Status'),
-                    content:
-                        const Text('Order successfully sent for approval!'),
-                    actions: <Widget>[
-                      TextButton(
-                        child: const Text('OK'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
+            onPressed: cart.total < 100000
+                ? () {
+                    placeOrder(cart);
+                    cart.clearCart();
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Order Status'),
+                          content: const Text(
+                              'Order successfully sent for approval!'),
+                          actions: <Widget>[
+                            TextButton(
+                              child: const Text('OK'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                : () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Order Status'),
+                          content: const Text('Total price exceeds limit.\n\nBudget is 100,000'),
+                          actions: <Widget>[
+                            TextButton(
+                              child: const Text('OK'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
             child: const Text('Place Order'),
           ),
         ],
