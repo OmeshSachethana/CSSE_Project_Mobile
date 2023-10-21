@@ -155,7 +155,6 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile Page"),
-        backgroundColor: const Color.fromARGB(255, 28, 122, 47),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete),
