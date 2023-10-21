@@ -45,17 +45,17 @@ class _MyWidgetState extends State<enquiriesFrom> {
                 TextField(
                   controller: _orderidController,
                   decoration: const InputDecoration(
-                      labelText: 'orderid', hintText: 'eg.Elon'),
+                      labelText: 'orderid', hintText: 'SI0023'),
                 ),
                 TextField(
                   controller: _itemnameController,
                   decoration: const InputDecoration(
-                      labelText: 'itemname', hintText: 'eg.Elon'),
+                      labelText: 'itemname', hintText: 'Cement'),
                 ),
                 TextField(
                   controller: _reasonController,
                   decoration: const InputDecoration(
-                      labelText: 'reason', hintText: 'eg.Elon'),
+                      labelText: 'reason', hintText: 'eg. comment'),
                 ),
                 TextField(
                   keyboardType: TextInputType.number,
@@ -126,17 +126,17 @@ class _MyWidgetState extends State<enquiriesFrom> {
                 TextField(
                   controller: _orderidController,
                   decoration: const InputDecoration(
-                      labelText: 'Order ID', hintText: 'eg.Elon'),
+                      labelText: 'Order ID', hintText: 'eg.SI0001'),
                 ),
                 TextField(
                   controller: _itemnameController,
                   decoration: const InputDecoration(
-                      labelText: 'Itemname', hintText: 'eg.Elon'),
+                      labelText: 'Itemname', hintText: 'eg.Cement'),
                 ),
                 TextField(
                   controller: _reasonController,
                   decoration: const InputDecoration(
-                      labelText: 'Reason', hintText: 'eg.Elon'),
+                      labelText: 'Reason', hintText: 'eg.Comment'),
                 ),
                 TextField(
                   keyboardType: TextInputType.number,
