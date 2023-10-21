@@ -26,6 +26,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home Page"),
+        backgroundColor: Colors.grey[900],
         actions: [
           IconButton(
             onPressed: () => navigateToCartPage(context),
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
             Container(
               height: 120, // Adjust the height as needed
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 6, 39, 52),
+                color: Color.fromARGB(255, 32, 39, 43),
               ),
               child: const Center(
                 child: Text(
