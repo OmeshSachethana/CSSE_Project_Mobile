@@ -93,24 +93,23 @@ class _ProductsViewState extends State<ProductsView> {
                           Padding(
                             padding: const EdgeInsets.only(
                                 top: 0.0,
-                                right: 8.0), // Add top and right padding
+                                right: 8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment
-                                  .end, // Align the button to the right
+                                  .end,
                               children: <Widget>[
-                                // Add circular "Add to Cart" button with cart icon
                                 InkWell(
                                   onTap: () {
                                     cart.addProduct(
-                                        data); // add the product to the cart
+                                        data);
                                   },
                                   child: Container(
-                                    width: 40, // Adjust the button size
+                                    width: 40,
                                     height: 40,
                                     decoration: const BoxDecoration(
                                      color: Color.fromARGB(255, 13, 82, 109),
                                       shape:
-                                          BoxShape.circle, // Make it circular
+                                          BoxShape.circle,
                                     ),
                                     child: const Icon(
                                       Icons.add_shopping_cart,
