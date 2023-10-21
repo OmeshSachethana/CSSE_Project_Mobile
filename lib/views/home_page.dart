@@ -62,6 +62,17 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             ListTile(
+              title: const Text('P R O F I L E',
+                  style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ProfilePage(),
+                    ));
+              },
+            ),
+            ListTile(
               title: const Text('S U P P L I E R',
                   style: TextStyle(color: Colors.white)),
               onTap: () {
@@ -86,24 +97,13 @@ class HomePage extends StatelessWidget {
                     ));
               },
             ), // Users()
-            ListTile(
-              title: const Text('P R O F I L E',
-                  style: TextStyle(color: Colors.white)),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ProfilePage(),
-                    ));
-              },
-            ),
 
             const SizedBox(height: 180),
-            ListTile(
-              title: const Text('L O G O U T',
-                  style: TextStyle(color: Colors.white)),
-              onTap: signUserOut,
-            ),
+            // ListTile(
+            //   title: const Text('L O G O U T',
+            //       style: TextStyle(color: Colors.white)),
+            //   onTap: signUserOut,
+            // ),
             // Add more ListTile items as needed
           ],
         ),
