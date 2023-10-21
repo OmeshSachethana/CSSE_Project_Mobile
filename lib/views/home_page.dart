@@ -2,6 +2,7 @@ import 'package:constro/views/delivery/drivers.dart';
 import 'package:constro/views/delivery/user.dart';
 import 'package:constro/views/product_cart_view.dart';
 import 'package:constro/views/products_view.dart'; // import the ProductsView
+import 'package:constro/views/profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +86,17 @@ class HomePage extends StatelessWidget {
                     ));
               },
             ), // Users()
+            ListTile(
+              title: const Text('P R O F I L E',
+                  style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ProfilePage(),
+                    ));
+              },
+            ),
 
             const SizedBox(height: 180),
             ListTile(
