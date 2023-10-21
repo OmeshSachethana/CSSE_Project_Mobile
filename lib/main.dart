@@ -14,7 +14,7 @@ Future<void> main() async {
   runApp(
     ChangeNotifierProvider(
       create: (context) => CartModel(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
