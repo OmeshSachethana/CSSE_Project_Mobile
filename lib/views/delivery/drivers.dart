@@ -1,3 +1,4 @@
+import 'package:constro/views/delivery/display_enquiries.dart';
 import 'package:flutter/material.dart';
 
 import 'addDriver.dart';
@@ -106,6 +107,35 @@ class _DriversState extends State<Drivers> {
                   ),
                   child: Text(
                     'Order List',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DisplayEnquiries(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 200,
+                  height: 55,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromARGB(255, 6, 39, 52),
+                  ),
+                  child: Text(
+                    'Enquiry List',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

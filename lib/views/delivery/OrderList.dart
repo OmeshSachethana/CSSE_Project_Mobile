@@ -172,53 +172,52 @@ class _OrderListState extends State<OrderList> {
                                   children: [
                                     SizedBox(width: 10.0),
                                     ElevatedButton(
-                                        style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStateProperty.all(
-                                                  Color.fromARGB(
-                                                      255, 6, 39, 52)),
-                                          shape: MaterialStateProperty.all(
-                                            RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                            ),
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                                Color.fromARGB(255, 6, 39, 52)),
+                                        shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
                                           ),
                                         ),
-                                        onPressed: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => EditOrder(
-                                                  sendQuantity:
-                                                      orderData['sendQuantity']
-                                                          .toString(),
-                                                  receivedQuantity: orderData[
-                                                          'receivedQuantity']
-                                                      .toString(),
-                                                  id: orderData['id']
-                                                      .toString()),
-                                            ),
-                                          );
-                                        },
-                                        child: Text('Update R Quantity')),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => EditOrder(
+                                                sendQuantity:
+                                                    orderData['sendQuantity']
+                                                        .toString(),
+                                                receivedQuantity: orderData[
+                                                        'receivedQuantity']
+                                                    .toString(),
+                                                id: orderData['id'].toString()),
+                                          ),
+                                        );
+                                      },
+                                      child: Text('Update R Quantity'),
+                                    ),
                                     SizedBox(width: 10.0),
                                     ElevatedButton(
-                                        style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStateProperty.all(
-                                                  Color.fromARGB(
-                                                      255, 6, 39, 52)),
-                                          shape: MaterialStateProperty.all(
-                                            RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                            ),
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                                Color.fromARGB(255, 6, 39, 52)),
+                                        shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
                                           ),
                                         ),
-                                        onPressed: () {
-                                          delete(orderData['id'].toString());
-                                        },
-                                        child: Text('Delete')),
+                                      ),
+                                      onPressed: () {
+                                        delete(orderData['id'].toString());
+                                      },
+                                      child: Text('Delete'),
+                                    ),
                                   ],
                                 ),
                               ),

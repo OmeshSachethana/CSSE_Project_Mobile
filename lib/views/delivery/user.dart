@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:constro/views/delivery/enquiries.dart';
 import 'package:flutter/material.dart';
 
 import 'DriverList.dart';
@@ -48,6 +49,30 @@ class _UsersState extends State<Users> {
               ),
             ),
             SizedBox(height: 30),
+            SizedBox(
+              width: 200,
+              height: 55,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Color.fromARGB(255, 6, 39, 52)),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => enquiriesFrom(),
+                    ),
+                  );
+                },
+                child: Text('Enquiry From'),
+              ),
+            ),
           ]),
         )));
   }
