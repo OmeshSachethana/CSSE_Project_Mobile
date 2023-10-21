@@ -81,7 +81,7 @@ class ProductCartView extends StatelessWidget {
                   trailing: Text('\$${cart.subtotal}'),
                 ),
                 ListTile(
-                  title: const Text('Tax (10%)'),
+                  title: const Text('Tax (5%)'),
                   trailing: Text('\$${cart.tax}'),
                 ),
                 ListTile(
@@ -90,52 +90,33 @@ class ProductCartView extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 13, 82, 109),
-                  ),
-                  onPressed: cart.total < 100000
-                      ? () {
-                          placeOrder(cart);
-                          cart.clearCart();
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: const Text('Order Status'),
-                                content: const Text(
-                                    'Order successfully sent for approval!'),
-                                actions: <Widget>[
-                                  TextButton(
-                                    child: const Text('OK'),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                  ),
-                                ],
-                              );
-                            },
+                      backgroundColor: const Color.fromARGB(255, 13, 82, 109)),
+                  onPressed: () async {
+                    bool exceedsLimit = cart.total > 100000;
+                    await placeOrder(cart);
+                    cart.clearCart();
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('Order Status'),
+                            content: exceedsLimit
+                                ? const Text(
+                                    'Total price exceeds 100,000! Your order has been sent for approval.')
+                                : const Text('Order successfully placed!'),
+                            actions: <Widget>[
+                              TextButton(
+                                child: const Text('OK'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
                           );
-                        }
-                      : () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: const Text('Order Status'),
-                                content: const Text(
-                                    'Total price exceeds limit.\n\nBudget is 100,000'),
-                                actions: <Widget>[
-                                  TextButton(
-                                    child: const Text('OK'),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                        },
-                  child: const Text('Place Order', style: TextStyle(fontSize: 18)),
+                        });
+                  },
+                  child:
+                      const Text('Place Order', style: TextStyle(fontSize: 18)),
                 ),
               ],
             ),
@@ -143,17 +124,17 @@ class ProductCartView extends StatelessWidget {
   }
 }
 
-void placeOrder(CartModel cart) {
+Future<void> placeOrder(CartModel cart) async {
   User? user = FirebaseAuth.instance.currentUser;
   if (user != null) {
-    FirebaseFirestore.instance.collection('orders').add({
+    await FirebaseFirestore.instance.collection('orders').add({
       'userRef': FirebaseFirestore.instance.collection('users').doc(user.uid),
-      'approveStatus': "pending",
+      'approveStatus': cart.total > 100000 ? "pending" : "approved",
       'date': DateTime.now().toIso8601String(),
       'products': cart.products
           .map((product) => {
                 'description': product['description'],
-                'image': product['imageUrl'],
+                'imageUrl': product['imageUrl'],
                 'name': product['name'],
                 'price': product['price'],
                 'quantity': product['quantity'],
