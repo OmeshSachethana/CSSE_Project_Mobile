@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 225, 244, 248),
       body: SafeArea(
         //avoid the top notch touch
         child: Center(
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                   'C O N S T R O',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 35,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -127,19 +127,19 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 10),
 
-                //forgot password
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.grey),
-                      )
-                    ],
-                  ),
-                ),
+                // //forgot password
+                // const Padding(
+                //   padding: EdgeInsets.symmetric(horizontal: 25.0),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+                //       Text(
+                //         'Forgot Password?',
+                //         style: TextStyle(color: Colors.grey),
+                //       )
+                //     ],
+                //   ),
+                // ),
 
                 const SizedBox(height: 25),
 
