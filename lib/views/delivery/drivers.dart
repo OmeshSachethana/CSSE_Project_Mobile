@@ -22,6 +22,11 @@ class _DriversState extends State<Drivers> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset(
+              'assets/images/cons.jpg', // Change this to the path of your image
+              width: 400,
+              height: 250, // Adjust the width as needed
+            ),
             SizedBox(height: 20),
             Card(
               elevation: 3,
@@ -112,6 +117,7 @@ class _DriversState extends State<Drivers> {
                 ),
               ),
             ),
+            SizedBox(height: 20),
             Card(
               elevation: 3,
               shape: RoundedRectangleBorder(
@@ -135,7 +141,7 @@ class _DriversState extends State<Drivers> {
                     color: Color.fromARGB(255, 6, 39, 52),
                   ),
                   child: Text(
-                    'Enquiry List',
+                    'Enquiries',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

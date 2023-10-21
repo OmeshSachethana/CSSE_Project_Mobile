@@ -153,11 +153,6 @@ class _OrderListState extends State<OrderList> {
                                     fontSize: 13.0, color: Colors.black),
                               ),
                               SizedBox(height: 4.0),
-                              Text(
-                                'Send Quantity : ${orderData['sendQuantity']}',
-                                style: TextStyle(
-                                    fontSize: 13.0, color: Colors.black),
-                              ),
                               SizedBox(height: 4.0),
                               Text(
                                 'Status : ${orderData['status']}',

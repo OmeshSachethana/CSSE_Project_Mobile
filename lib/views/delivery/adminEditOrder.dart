@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:constro/views/delivery/AdminOrderList.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class _AdminEditOrderState extends State<AdminEditOrder> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => OrderList(),
+        builder: (context) => AdminOrderList(),
       ),
     );
   }
@@ -120,7 +121,7 @@ class _AdminEditOrderState extends State<AdminEditOrder> {
                                       update(quantityController.text);
                                     }
                                   },
-                                  child: const Text('Submit'),
+                                  child: const Text('Update'),
                                 )),
                           ],
                         ))))));

@@ -42,14 +42,14 @@ class _EditOrderState extends State<EditOrder> {
 
   void update(String quantity) {
     String status = "Incomplete";
-    if (int.parse(quantity) >= int.parse(widget.sendQuantity)) {
+    if (int.parse(quantity) == int.parse(widget.sendQuantity)) {
       status = "Complete";
     }
     firestore
         .collection('approveOrder')
         .doc(widget.id)
         .update({'receivedQuantity': quantity, 'status': status});
-    Fluttertoast.showToast(msg: "successfully updated");
+    Fluttertoast.showToast(msg: "Successfully updated");
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -125,7 +125,7 @@ class _EditOrderState extends State<EditOrder> {
                                       update(quantityController.text);
                                     }
                                   },
-                                  child: const Text('Submit'),
+                                  child: const Text('Update'),
                                 )),
                           ],
                         ))))));

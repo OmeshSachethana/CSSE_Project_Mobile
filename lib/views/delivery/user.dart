@@ -23,6 +23,11 @@ class _UsersState extends State<Users> {
         body: SingleChildScrollView(
             child: Center(
           child: Column(children: [
+            Image.asset(
+              'assets/images/thumsup.jpg', // Change this to the path of your image
+              width: 400,
+              height: 250, // Adjust the width as needed
+            ),
             SizedBox(height: 35),
             SizedBox(
               width: 200,
