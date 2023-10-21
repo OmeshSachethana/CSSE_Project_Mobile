@@ -107,12 +107,12 @@ class _ProductsViewState extends State<ProductsView> {
                                   child: Container(
                                     width: 40, // Adjust the button size
                                     height: 40,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue, // Button color
+                                    decoration: const BoxDecoration(
+                                     color: Color.fromARGB(255, 13, 82, 109),
                                       shape:
                                           BoxShape.circle, // Make it circular
                                     ),
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.add_shopping_cart,
                                       color: Colors.white,
                                     ),
