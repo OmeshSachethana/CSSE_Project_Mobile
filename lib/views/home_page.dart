@@ -2,6 +2,7 @@ import 'package:constro/views/delivery/drivers.dart';
 import 'package:constro/views/delivery/user.dart';
 import 'package:constro/views/product_cart_view.dart';
 import 'package:constro/views/products_view.dart'; // import the ProductsView
+import 'package:constro/views/profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,17 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             ListTile(
+              title: const Text('P R O F I L E',
+                  style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ProfilePage(),
+                    ));
+              },
+            ),
+            ListTile(
               title: const Text('S U P P L I E R',
                   style: TextStyle(color: Colors.white)),
               onTap: () {
@@ -88,11 +100,11 @@ class HomePage extends StatelessWidget {
             ), // Users()
 
             const SizedBox(height: 180),
-            ListTile(
-              title: const Text('L O G O U T',
-                  style: TextStyle(color: Colors.white)),
-              onTap: signUserOut,
-            ),
+            // ListTile(
+            //   title: const Text('L O G O U T',
+            //       style: TextStyle(color: Colors.white)),
+            //   onTap: signUserOut,
+            // ),
             // Add more ListTile items as needed
           ],
         ),
