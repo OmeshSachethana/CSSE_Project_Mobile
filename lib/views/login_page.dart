@@ -1,3 +1,5 @@
+import 'package:constro/views/adminhome.dart';
+import 'package:constro/views/delivery/drivers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +40,15 @@ class _LoginPageState extends State<LoginPage> {
 
       //pop the loading circle
       Navigator.pop(context);
+      if (emailController.text == "nidukihna@gmail.com") {
+        // Navigate to the admin page
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AdminHome(),
+          ),
+        );
+      }
     } on FirebaseAuthException catch (e) {
       //pop the loading circle
       Navigator.pop(context);
