@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home Page"),
+        backgroundColor: const Color.fromARGB(255, 6, 39, 52),
         actions: [
           IconButton(
             onPressed: () => navigateToCartPage(context),
